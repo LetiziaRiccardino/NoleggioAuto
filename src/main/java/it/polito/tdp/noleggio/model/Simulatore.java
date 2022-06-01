@@ -6,12 +6,15 @@ import java.util.PriorityQueue;
 
 import it.polito.tdp.noleggio.model.Event.EventType;
 
-public class Simulatore {
+public class Simulatore {   //Calcola il numero di clienti insoddisfatti, alla fine della giornata, in funzione di NC
 	
 	//Parametri di ingresso
-	private int NC;
-	private Duration T_IN= Duration.ofMinutes(10); //intervallo di tempo, uso la libreria java.time
+	private int NC; //numero macchine iniziale
+	private Duration T_IN= Duration.ofMinutes(10); //intervallo di tempo, uso la libreria java.time. A new client comes every T_IN minutes
 	private Duration T_TRAVEL= Duration.ofHours(1); //1,2 o 3 volte tanto
+	       //If there are available cars, he lends one car, for a duration of T_TRAVEL minutes
+           //If there are no cars, he is a dissatisfied client
+	
 	
 	//Valori calcolati in uscita
 	private int nClientiTot;
